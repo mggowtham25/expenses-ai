@@ -31,6 +31,7 @@ export const inputsCustomizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         boxShadow: 'none',
+        // @ts-ignore
         borderRadius: (theme.vars || theme).shape.borderRadius,
         textTransform: 'none',
         variants: [
@@ -113,6 +114,7 @@ export const inputsCustomizations: Components<Theme> = {
               variant: 'outlined',
             },
             style: {
+              // @ts-ignore
               color: (theme.vars || theme).palette.text.primary,
               border: '1px solid',
               borderColor: gray[200],
@@ -225,10 +227,12 @@ export const inputsCustomizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         boxShadow: 'none',
+        // @ts-ignore
         borderRadius: (theme.vars || theme).shape.borderRadius,
         textTransform: 'none',
         fontWeight: theme.typography.fontWeightMedium,
         letterSpacing: 0,
+        // @ts-ignore
         color: (theme.vars || theme).palette.text.primary,
         border: '1px solid ',
         borderColor: gray[200],
@@ -383,9 +387,13 @@ export const inputsCustomizations: Components<Theme> = {
       },
       root: ({ theme }) => ({
         padding: '8px 12px',
+        // @ts-ignore
         color: (theme.vars || theme).palette.text.primary,
+        // @ts-ignore
         borderRadius: (theme.vars || theme).shape.borderRadius,
+        // @ts-ignore
         border: `1px solid ${(theme.vars || theme).palette.divider}`,
+        // @ts-ignore
         backgroundColor: (theme.vars || theme).palette.background.default,
         transition: 'border 120ms ease-in',
         '&:hover': {
@@ -427,8 +435,10 @@ export const inputsCustomizations: Components<Theme> = {
   MuiInputAdornment: {
     styleOverrides: {
       root: ({ theme }) => ({
+        // @ts-ignore
         color: (theme.vars || theme).palette.grey[500],
         ...theme.applyStyles('dark', {
+          // @ts-ignore
           color: (theme.vars || theme).palette.grey[400],
         }),
       }),

@@ -1,11 +1,11 @@
 import "./styles/App.css";
-import SignIn from "./login/SignIn";
+import AppLayout from "./layout/AppLayout";
 
 function App() {
 
    return (
       <>
-          <SignIn />
+          <AppLayout />
       </>
    );
 }
