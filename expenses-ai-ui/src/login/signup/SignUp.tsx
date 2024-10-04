@@ -20,7 +20,7 @@ const Card = styled(MuiCard)(({ theme }) => ({
     display: "flex",
     flexDirection: "column",
     alignSelf: "center",
-    width: "100%",
+    width: "25vw",
     padding: theme.spacing(4),
     gap: theme.spacing(2),
     margin: "auto",
@@ -41,17 +41,24 @@ const SignUpContainer = styled(Stack)(({ theme }) => ({
     [theme.breakpoints.up("sm")]: {
         padding: theme.spacing(4)
     },
-    backgroundImage:
-        "radial-gradient(ellipse at 50% 50%, hsl(210, 100%, 97%), hsl(0, 0%, 100%))",
-    backgroundRepeat: "no-repeat",
-    ...theme.applyStyles("dark", {
+    "&::before": {
+        content: "\"\"",
+        display: "block",
+        position: "absolute",
+        zIndex: -1,
+        inset: 0,
         backgroundImage:
-            "radial-gradient(at 50% 50%, hsla(210, 100%, 16%, 0.5), hsl(220, 30%, 5%))"
-    })
+            "radial-gradient(ellipse at 50% 50%, hsl(210, 100%, 97%), hsl(0, 0%, 100%))",
+        backgroundRepeat: "no-repeat",
+        ...theme.applyStyles("dark", {
+            backgroundImage:
+                "radial-gradient(at 50% 50%, hsla(210, 100%, 16%, 0.5), hsl(220, 30%, 5%))"
+        })
+    }
 }));
 
 export default function SignUp() {
-    const [mode, setMode] = React.useState<PaletteMode>("light");
+    const [mode, setMode] = React.useState<PaletteMode>("dark");
     const [showCustomTheme, setShowCustomTheme] = React.useState(true);
     const defaultTheme = createTheme({ palette: { mode } });
     const SignUpTheme = createTheme(getSignUpTheme(mode));
@@ -215,7 +222,7 @@ export default function SignUp() {
                             Already have an account?{ " " }
                             <span>
                   <Link
-                      href = "/material-ui/getting-started/templates/sign-in/"
+                      href = "/signIn"
                       variant = "body2"
                       sx = { { alignSelf: "center" } }
                   >
